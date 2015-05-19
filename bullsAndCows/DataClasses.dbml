@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bullsAndCowsDataBase" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\bullsAndCowsDataBase.mdf;Integrated Security=True" SettingsObjectName="bullsAndCows.Properties.Settings" SettingsPropertyName="bullsAndCowsDataBaseConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Atempts" Member="Atempts">
+    <Type Name="Atempt">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bulls" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cows" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.AddNewAttempt" Method="AddNewAttempt">
+    <Parameter Name="id_user" Type="System.Int32" DbType="Int" />
+    <Parameter Name="number" Type="System.Int32" DbType="Int" />
+    <Parameter Name="bulls" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cows" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.AddNewUser" Method="AddNewUser">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Number" Parameter="number" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TruncateUsers" Method="TruncateUsers">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.TruncateAttempts" Method="TruncateAttempts">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
